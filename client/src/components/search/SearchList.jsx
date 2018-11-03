@@ -1,21 +1,22 @@
 import React from 'react';
 
 const SearchList = ({ingredients, deleteIngredient}) => (
-  <div className='search-list'>
+  <ul className='search-list'>
     {ingredients.map((ingredient, i) => (
-      <div key={i}>
-        <ul 
+      <ul>
+        <div className ='ingredient-in-search'>
           className='search-list-entry'
-        >• {ingredient}</ul>
+        >• {ingredient}
         <input 
           className='button remove-btn'
           type='submit' 
           value='X'
           name={i}
           onClick={(e) => deleteIngredient(e)}/>
-      </div>
+          </div>
+      </ul>
     ))}
-  </div>
+  </ul>
 )
 
 export default SearchList;
