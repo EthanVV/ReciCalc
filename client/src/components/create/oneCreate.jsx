@@ -153,7 +153,6 @@ class Create extends React.Component {
       }, '')
 
     }, () => {
-
       this.setState((state, props) => {
         state.ingredients.pop()
         state.instructions.pop()
@@ -231,19 +230,25 @@ class Create extends React.Component {
     ]
 
     return (
-      <div id="create">
-        <h2>What's cookin'?</h2>
-        <div>
+      <div id="createWrapper">
+        <div id="nuthead" className="nutrients">
+          <h2>What's cookin'?</h2>
+        </div>
+        
+        <div className="nutrients" id="chartNut">
           <h3>Your Nutrients</h3>
-          <Chart data={data}>
-            <Axis type="pie" />
-            <Series type={Pie} showPoints={false} />
-            <Tooltip />
-          </Chart>
+          <div id="chart">
+            <Chart data={data}>
+              <Axis type="pie" />
+              <Series type={Pie} showPoints={false} />
+              <Tooltip />
+            </Chart>
+          </div>
           <h3>Total Calories</h3>
           <h5>{this.state.totalCal} kcal</h5>
         </div>
-        <form>
+        
+        <form className="nutrients" id="formNut">
           <label>
             <h3>Recipe title:</h3>
             <input type="text" name="title" placeholder="Add recipe title" onChange={this.handleChange}/>

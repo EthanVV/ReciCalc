@@ -187,7 +187,6 @@ module.exports.addUser = (user, cb) => {
       })
       .catch(err, null)
     } else {
-      console.log('dup user found');
       return knex('users').select('id')
       .where({gitName: user})
       .then((row) => {

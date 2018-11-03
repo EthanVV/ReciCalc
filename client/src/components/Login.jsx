@@ -1,6 +1,8 @@
 import React from 'react';
 import Auth0Lock from 'auth0-lock';
-import auth0_config from '../../../auth0_config.js';
+// import auth0_config from '../../../auth0_config.js';
+const clientID = process.env.clientID;
+const domain = process.env.domain;
 
 let options = {
   languageDictionary: {
@@ -8,7 +10,7 @@ let options = {
   }
 };
 
-let lock = new Auth0Lock(auth0_config.clientID, auth0_config.domain, options);
+let lock = new Auth0Lock(clientID, domain, options);
 
 lock.on("authenticated", function(authResult) {
   localStorage.setItem('accessToken', authResult.accessToken);

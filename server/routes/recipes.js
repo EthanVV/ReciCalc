@@ -4,7 +4,6 @@ const format = require('../../helpers/formatCheckers.js');
 
 module.exports.recipes = {
   getList: (req, res) => {
-    console.log('getList req is', req.query.user);
     let userId = req.query.user;
     //query database for a list of short recipe descriptions and return them
     db.fetchRecipeList(userId)

@@ -39,11 +39,11 @@ class RecipeList extends Component {
     .then(res => {
       this.setState({
         userId: parseInt(res.data)
-      })
+      }, () => this.update())
     })
-    .then(() => {
-      this.update();
-    })
+    // .then(() => {
+    //   this.update();
+    // })
   }
 
   update() {

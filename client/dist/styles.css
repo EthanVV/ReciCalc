@@ -25,6 +25,7 @@ section {
 
 body {
   line-height: 1;
+  font-size: 15pt;
 }
 
 ol,
@@ -173,14 +174,25 @@ body,
   color: #12770b;
 }
 
+/* new create wrapper */
+
+#createWrapper {
+  display: grid;
+  grid-template-rows: 200px, auto;
+  grid-template-columns: 1fr, 1fr;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 /* Create Recipe View */
-#create {
+/* #create {
   margin-top: 15px;
   display: grid;
   grid-template-rows: 65px 125px 1fr;
   grid-template-columns: 175px 1fr 1fr;
-}
+} */
 
 #recipe-submit {
   text-align: center;
@@ -188,17 +200,53 @@ body,
   justify-self: center;
 }
 
-h2 {
+/* h2 {
   grid-area: 1 / 2 / 2 / 3;
   display: inline-block;
   width: 225px;
   font-size: 35px;
+} */
+
+#nuthead {
+  grid-column: 1/3;
+  text-align: center;
+  justify-content: center;
+  grid-row: 1/2;
+  margin-bottom: 80px;
+  
+}
+
+#chart {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  padding: auto;
+  margin: auto;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+.nutrients {
+  grid-row: 2/3;
+}
+
+#formNut {
+  grid-column: 0/1;
+
+}
+
+#chartNut {
+  grid-column: 1/2;
+  justify-content: center;
 }
 
 h3 {
   max-width: 185px;
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: 10px;
+  margin-top: 30px;
   border-bottom: 3px solid #12770b
 }
 
